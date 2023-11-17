@@ -39,11 +39,11 @@ public class Board {
             // tiles are L shaped so it is not possible to cover any
             // cells when size of board is less then 2
             // if n < 2 for eg. 1 then nxn = 1x1 is a single cell
-            // so problem is already solved or could not be solved!
+            // so problem is already solved or could not be solved
             return;
         }
         // RECURSIVE STEP
-        // we can divide board in 4 quadrant
+        // divide board in 4 quadrant
         //   -----
         //   |1|2|
         //   -----
@@ -52,7 +52,7 @@ public class Board {
         // first find a cell that is covered with tile
         // in any quadrant
         int covered = findCoveredCellQuadrant(startRow, startCol, n);
-        // now place the tile in middle such that it covers a cell in all quadrant
+        // place the tile in middle such that it covers a cell in all quadrant
         // except the already covered one
         placeTile(startRow, startCol, n, covered);
         n = n / 2; // reduce size by half to make 4 quadrants
@@ -68,7 +68,7 @@ public class Board {
     }
 
     // helper method that place a L shaped tile in middle of given region
-    // such that it covers a cell in all 3 quadrant of region that does not
+    // so that it covers a cell in all 3 quadrant of region that does not
     // have a covered cell
     private void placeTile(int startRow, int startCol, int n, int covered) {
         // place the tile in middle such that it covers a cell in all quadrant
@@ -129,7 +129,7 @@ public class Board {
 
     // helper method to find quadrant with a covered cell
     private int findCoveredCellQuadrant(int startRow, int startCol, int n) {
-        // first divide given board in to 4 quadrant and
+        // divide given board in to 4 quadrant and
         // if any cell is covered in that quadrant then return that quadrant number
         n = n / 2; // reduce size by half to make 4 quadrants
         // 1 for upper left
